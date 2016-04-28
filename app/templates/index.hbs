@@ -1,0 +1,10 @@
+{{#each model as |post|}}
+  <article>
+    <header class="page-header">
+      <h2>
+        {{#link-to 'blog-post' post}} {{post.title}} {{/link-to}}
+      </h2>
+    </header>
+    <p>{{post.body}}</p>
+  </article>
+{{/each}}

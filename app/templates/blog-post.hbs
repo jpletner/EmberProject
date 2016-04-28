@@ -1,0 +1,25 @@
+<article>
+  <header class="page-header">
+    <h1>{{model.title}}</h1>
+  </header>
+  <p>{{model.body}}</p>
+
+  <h2>Comments</h2>
+  {{#if model.comments.isPending}}
+    <p>Loading...</p>
+  {{else}}
+    {{#if model.comments}}
+      <ul>
+      {{#each model.comments as |comment|}}
+        <li>{{comment.content}}</li>
+      {{/each}}
+      </ul>
+    {{else}}
+      <p>There are no comments yet.</p>
+    {{/if}}
+  {{/if}}
+</article>
+
+<hr>
+
+{{comment-form saveComment='saveComment'}}
